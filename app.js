@@ -11,7 +11,6 @@ app.use(express.urlencoded({ extended: true }))
 const db = require('./apps/model/')
 db.mongoose
     .connect(db.url, {
-        // useFindAndModify: false,
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
@@ -30,6 +29,7 @@ app.get('/', (req, res) => {
 })
 
 require('./apps/routes/post.routes')(app)
+require('./apps/routes/user.routes')(app)
 
 const PORT = 8000;
 

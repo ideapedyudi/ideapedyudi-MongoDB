@@ -5,7 +5,7 @@ module.exports = (app) => {
     router.get('/', posts.findAll)
     router.post('/', posts.create)
     router.get('/:id', posts.findOne)
-    router.patch('/:id', posts.update)
+    router.put('/:id', posts.update)
     router.delete('/:id', posts.delete)
 
     app.use('/api/posts', router)
